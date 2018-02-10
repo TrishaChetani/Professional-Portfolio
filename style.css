@@ -1,0 +1,79 @@
+*{ box-sizing: border-box }
+body{
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.container{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.column{
+  display: block;
+  flex: 1 0 100%;
+  max-width: 100%;
+  padding: 5px;
+}
+@media(min-width: 568px){
+  .row{
+    flex-flow: row wrap
+  }
+  .column{
+    flex: 1;
+  }
+}
+h1, h2, h3, h4, h5, h6, p{
+  margin: 10px 0;
+}
+.hero{
+  height: 700px;
+  background: url(https://unsplash.it/5451/3634?image=862);
+  background-size: cover;
+  color: white;
+}
+.section{
+  padding: 20px;
+}
+.section__heading{ text-align: left; }
+.caption{
+  margin: 100px 0;
+  text-align: center;
+}
+.project{
+  border: solid thin #ddd;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.project__image{
+
+    position: relative;
+    float: left;
+    width:  200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    border: 3px solid #000000;
+    padding: 10px;
+}
+.project__description{
+  padding: 10px 20px;
+}
+footer{
+  padding: 20px;
+  background: #222;
+  color: white;
+  text-align: center;
+}
+.fa{
+  font-size: 20px;
+  margin-right: 10px;
+}
