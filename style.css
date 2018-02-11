@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 .hero{
   height: 700px;
-  background: url(https://unsplash.it/5451/3634?image=862);
+  background: url(https://unsplash.it/5451/3634?image=862);  
   background-size: cover;
   color: white;
 }
@@ -45,8 +45,18 @@ h1, h2, h3, h4, h5, h6, p{
 }
 .section__heading{ text-align: left; }
 .caption{
+  overflow: visible;
   margin: 100px 0;
   text-align: center;
+   /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: pre-line; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  font-family: Helvetica, Arial, Sans-Serif;
+  animation: 
+    typing 10.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 .project{
   border: solid thin #ddd;
@@ -77,3 +87,51 @@ footer{
   font-size: 20px;
   margin-right: 10px;
 }
+
+.typewriter li {
+  overflow: visible;
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: pre-line; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 10.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+    font-family: Helvetica, Arial, Sans-Serif;
+
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+text{
+ 
+  font-family: "Courier";
+  white-space: preline;
+  overflow: visible;
+  animation: type 4s steps(60, end);
+  animation: blink 7s infinite; 
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
