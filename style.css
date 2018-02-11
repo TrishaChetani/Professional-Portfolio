@@ -112,13 +112,13 @@ footer{
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }
-text{
+h3{
  
   font-family: "Courier";
   white-space: preline;
   overflow: visible;
-  animation: type 4s steps(60, end);
-  animation: blink 7s infinite; 
+animation: type 4s steps(60, end);
+   animation: pulse 15s infinite; 
 }
 
 @keyframes type{ 
