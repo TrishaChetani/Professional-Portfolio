@@ -66,8 +66,8 @@ h1, h2, h3, h4, h5, h6, p{
 
     position: relative;
     float: left;
-    width:  200px;
-    height: 200px;
+    width:  500px;
+    height: 500px;
     background-position: 50% 50%;
     background-repeat:   no-repeat;
     background-size:     cover;
