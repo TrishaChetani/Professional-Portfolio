@@ -63,7 +63,6 @@ h1, h2, h3, h4, h5, h6, p{
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 .project__image{
-
     position: relative;
     float: left;
     width:  120px;
@@ -137,6 +136,3 @@ animation: type 4s steps(60, end);
 }
 .alignleft { float: left; }
  
-
-
-  
