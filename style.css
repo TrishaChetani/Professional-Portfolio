@@ -3,13 +3,10 @@ body{
   margin: 0;
 }
 a{
-  text-decoration: none;
-  color: inherit;
+    color: inherit;
 }
-.container{
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+p{
+    FONT-SIZE: large;;
 }
 .row{
   display: flex;
@@ -22,6 +19,7 @@ a{
   flex: 1 0 100%;
   max-width: 100%;
   padding: 5px;
+    font-family: Helvetica, Arial, Sans-Serif
 }
 @media(min-width: 568px){
   .row{
@@ -38,7 +36,8 @@ h1, h2, h3, h4, h5, h6, p{
   height: 700px;
   background: url(https://unsplash.it/5451/3634?image=862);  
   background-size: cover;
-  color: white;
+  color: black;
+    text-align: left;
 }
 .section{
   padding: 20px;
@@ -54,6 +53,7 @@ h1, h2, h3, h4, h5, h6, p{
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   font-family: Helvetica, Arial, Sans-Serif;
+    color:black;
   animation: 
     typing 10.5s steps(40, end),
     blink-caret .75s step-end infinite;
@@ -62,17 +62,7 @@ h1, h2, h3, h4, h5, h6, p{
   border: solid thin #ddd;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
-.project__image{
-    position: relative;
-    float: left;
-    width:  120px;
-    height: 120px;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
-    border: 2px solid #000000;
-    padding: 10px;
-}
+
 .project__description{
   padding: 10px 20px;
 
@@ -112,8 +102,7 @@ footer{
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }
-h3{
- 
+.h3{
   font-family: "Courier";
   white-space: preline;
   overflow: visible;
@@ -135,4 +124,28 @@ animation: type 4s steps(60, end);
   to{opacity: .0;}
 }
 .alignleft { float: left; }
- 
+.container {
+    width: auto;
+    max-width: fit-content;
+    margin: auto auto;
+}
+.project__image{
+    position: relative;
+    width: 310px;
+    height: 160px;
+    border: 2px solid #000000;
+    padding: 10px;
+}
+.h3 .li{
+    color:black;
+    font-family: Helvetica, Arial, Sans-Serif;
+    padding:1px;
+}
+.nav-button{
+    color: #0000EE;
+    DISPLAY: block;
+    FONT-SIZE: xx-large;
+}
+text{
+   color:#e81515;
+}
