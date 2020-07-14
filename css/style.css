@@ -27,6 +27,8 @@ img{
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  padding:50px;
+
 }
 
 .icon-block {
@@ -69,7 +71,7 @@ p {
 }
 .container .landing-content{
   padding: 20px 0px;
-  font-family: Nunito ;
+  font-family: Nunito;
   padding: 30px 0px;
 }
 .container .landing-content h1{
@@ -207,7 +209,7 @@ div.timeline__item {
   color: #222;
   margin: 0;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.8em;
+  font-size: 2.8em;
 }
 .timeline__item ul li{
   position: relative
@@ -243,10 +245,18 @@ div.timeline__item {
 }
 /* AWARDS */
 .awards {
-  background:rgb(255, 99, 71);
+  background:rgba(255, 99, 71,0.8);
   padding: 50px 0;
   text-align: bottom-down;
 }
+/* .awards .bg{
+  clip-path: polygon(29% 0, 100% 0, 86% 99%, 0% 100%);
+  background: url('../images//success.gif') no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  width: fit-content;
+  min-width: 500px;
+}*/
 .awards a {
   color: blue;
   font-size: 25px;
@@ -270,7 +280,7 @@ div.timeline__item {
 }
 /* PUBLIC SPEAKING */
 .public-speaking{
- margin: 30px 0px
+ margin: 30px 0px;
 }
 .public-speaking .container{
   display: flex;
@@ -278,34 +288,51 @@ div.timeline__item {
 }
 .public-speaking .event{
   padding: 20px;
-  margin: 10px;
+  margin: 15px;
   max-width: 350px;
-  box-shadow: 0px 5px 10px rgba( 0,0,0, .08)
+  box-shadow: 0px 5px 10px rgba( 0,0,0, .08);
 }
 .public-speaking .event h5{
-  letter-spacing: 1.1;;
+  letter-spacing: 1.1;
   text-decoration: underline;
   color: #222;
   font-size: 20px;
   line-height: 28px;
 }
 .public-speaking .event span{
-  font-size: 16px
+  font-size: 16px;
 }
 /* CONTRIBUTIONS */
 .contributions{
-  margin-top: 10px;
+  margin: 30px 0px;
+  padding:50px;
 }
 .contributions .m4{
-  min-width: 400px;
-  margin: 8px;
-  box-shadow: 0px 5px 10px rgba( 0,0,0, .08)
+  min-width: 600px;
+  margin: 10px;
+  box-shadow: 0px 5px 10px rgba( 0,0,0, .08);
 }
 .contributions .m4 .des{
   padding: 20px;
 }
 .contributions .m4 p {
-  font-size: 16px
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Content */
+li{
+
+  text-align: left;
+  list-style-position: inside;
+  list-style-type: circle;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.3em;
+}
+ul{
+  margin: 10px;
+  box-shadow: 0px 5px 10px rgba( 0,0,0, .08);
+  padding:10px; 
 }
 
 
@@ -340,6 +367,8 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 5px 10px rgba( 0,0,0, .08);
 }
 
 
