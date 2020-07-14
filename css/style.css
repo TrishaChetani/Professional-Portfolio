@@ -1,0 +1,424 @@
+/* Custom Stylesheet */
+
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,300;1,900&display=swap');
+body{
+  font-family: nunito;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+.ul .li{
+  list-style-type: circle;
+}
+ img{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+/* LANDING PAGE */
+.container{
+  width: 80%;
+}
+.landing {
+  min-height:50vh;
+  height: auto;
+  color: rgba(255,255,255,.9);
+  background-image: linear-gradient(to right , rgba(0, 0, 0, .7), rgba(0, 0, 0, .5)), url('https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2382&q=80');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 30px 0px;
+}
+.container .landing-content{
+  padding: 20px 0px;
+  font-family: Nunito ;
+  padding: 30px 0px;
+}
+.container .landing-content h1{
+  font-size: 120px;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  color: #fff;
+}
+.container .landing-content p{
+  font-size: 40px;
+  margin: 0px;
+  color: orange;
+}
+.container .landing-content i {
+  animation: spin 4s infinite linear;
+  font-size: 30px;
+}
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg)
+  }
+}
+.parallax-container .section {
+  width: 100%;
+}
+/* ABOUT */
+.about {
+  margin-top: 50px;
+  background: #fbfbfb;
+  border-bottom: 1px solid #ddd;
+  padding: 30px 
+}
+.about .container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 90%;
+}
+.about .container .bg{
+  clip-path: polygon(50% 0%, 100% 0, 60% 100%, 0 100%, 0 0);
+  background: url('../images//Trisha.jpeg') no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  width: fit-content;
+  min-width: 500px;
+}
+.about .container h4{
+  color: rgb(207, 140, 15)
+}
+
+.intro > h2{
+  position: relative;
+  padding-bottom: 8px;
+}
+.intro h2:before{
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 15%;
+  background: orangered;
+  border-radius: 50px;;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.intro span{
+  font-size: 18px;
+  margin-top: 10px;
+  display: inline-block;
+}
+.timeline {
+  position: relative;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1300px;
+
+
+  @media screen and (min-width: 700px) {
+    padding: 2rem;
+    &:before {
+      left: calc(50% - 1px);
+      right: auto;
+    }
+  }
+}
+
+div.timeline__item {
+  display:flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  padding: 30px 20px;
+  box-shadow: 0 8px 30px rgba( 0,0,0, .08);
+  border-radius: 3px;
+  position: relative;
+  margin: 1rem 0 1.5rem 0;
+}
+.timeline__item .timeline__title{
+  padding-bottom: 10px;
+}
+.timeline__item img{
+  max-width: 300px;
+}
+
+.timeline__item--year {
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  color: orangered;
+  position: relative;
+  padding: 80px 0 0 0;
+  margin-top: 30px;
+}
+.timeline__item--year:before{
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: #ddd;
+}
+.timeline__item .description{
+    color: #555;
+    max-width: 800px;
+    margin-left: 40px;
+}
+.timeline__title {
+  color: #222;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.8em;
+}
+.timeline__item ul li{
+  position: relative
+}
+.timeline__item ul li:before{
+  content: '';
+  height: 5px;
+  width: 5px;
+  background: #222;
+  position: absolute;
+  top: 8px;
+  left: -15px;
+}
+
+.timeline__blurb {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  margin: .5rem 0 0;
+
+}
+.timeline__item .description .full-desc{
+  font-size: 1.5rem;
+  margin-top: 0px;
+  display: none;
+}
+.timeline__item .description .full-desc.shown{
+  display: block !important;
+}
+.timeline__item .description ul li{
+  margin-bottom: 10px;
+  font-size: 1.3em;
+
+}
+/* AWARDS */
+.awards {
+  background: orange;
+  padding: 50px 0;
+  text-align: center;
+}
+.awards a {
+  color: #fff;
+  font-size: 25px;
+  text-decoration: underline;
+}
+/* PUBLIC SPEAKING */
+.public-speaking{
+ margin: 30px 0px
+}
+.public-speaking .container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.public-speaking .event{
+  padding: 20px;
+  margin: 10px;
+  max-width: 350px;
+  box-shadow: 0px 5px 10px rgba( 0,0,0, .08)
+}
+.public-speaking .event h5{
+  letter-spacing: 1.1;;
+  text-decoration: underline;
+  color: #222;
+  font-size: 20px;
+  line-height: 28px;
+}
+.public-speaking .event span{
+  font-size: 16px
+}
+/* CONTRIBUTIONS */
+.contributions{
+  margin-top: 10px;
+}
+.contributions .m4{
+  min-width: 400px;
+  margin: 8px;
+  box-shadow: 0px 5px 10px rgba( 0,0,0, .08)
+}
+.contributions .m4 .des{
+  padding: 20px;
+}
+.contributions .m4 p {
+  font-size: 16px
+}
+
+
+/* Contact form */
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=submit] {
+  background-color: #444;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the container/contact section */
+.containerform {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Footer */
+footer{
+  padding: 20px;
+  background: #222;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  margin: 8px;
+}
+.footer .social{
+  padding: 20px;
+  font: normal normal normal 24px/1 FontAwesome;
+
+}
+/* RESPONSIVENESS */
+@media screen and (max-width: 1000px){
+  .about .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about .container .bg{
+    clip-path: none;
+    min-height: 400px
+  }
+
+  div.timeline__item {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  div.timeline__item img{
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 10px;;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 80%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 768px){
+    .container .landing-content h1{
+      font-size: 65px;
+    }
+    .container .landing-content p{
+      font-size: 30px;
+    }
+    
+    .timeline__item{
+        flex-direction: column;
+    }
+    .timeline__item .description{
+        margin-top: 10px;
+    }
+
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+@media screen and (max-width: 500px){
+
+}
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
