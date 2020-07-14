@@ -8,9 +8,10 @@
  * Made By MaterializeCSS.com
  */
 
-/* Global styles */
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,300;1,900&display=swap');
-body{
+ /* Global styles */
+ @import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,300;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:300');
+ body{
   font-family: nunito;
 }
 
@@ -22,7 +23,7 @@ nav .brand-logo {
 .ul .li{
   list-style-type: circle;
 }
- img{
+img{
   max-width: 100%;
   height: auto;
   object-fit: cover;
@@ -49,7 +50,7 @@ p {
 }
 
 .sidenav-trigger {
-  color: #26a69a;
+  color: orange;
 }
 /* LANDING PAGE */
 .container{
@@ -111,7 +112,7 @@ p {
   width: 90%;
 }
 .about .container .bg{
-  clip-path: polygon(50% 0%, 100% 0, 60% 100%, 0 100%, 0 0);
+  clip-path: polygon(29% 0, 100% 0, 86% 99%, 0% 100%);
   background: url('../images//Trisha.jpeg') no-repeat;
   background-size: cover;
   min-height: 500px;
@@ -198,9 +199,9 @@ div.timeline__item {
   background: #ddd;
 }
 .timeline__item .description{
-    color: #555;
-    max-width: 800px;
-    margin-left: 40px;
+  color: #555;
+  max-width: 800px;
+  margin-left: 40px;
 }
 .timeline__title {
   color: #222;
@@ -242,14 +243,30 @@ div.timeline__item {
 }
 /* AWARDS */
 .awards {
-  background: orange;
+  background:rgb(255, 99, 71);
   padding: 50px 0;
-  text-align: center;
+  text-align: bottom-down;
 }
 .awards a {
-  color: #fff;
+  color: blue;
   font-size: 25px;
   text-decoration: underline;
+}
+.awards .container {
+   position: relative;  
+  max-width: 800px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+}
+
+.awards .container .content {
+  position: min-content; /* position the background text */
+  bottom: 0; /* at the bottom. use top:0 to append it to the top */
+  background: rgb(236, 177, 177); /* fallback color */
+  background:  rgba(245, 193, 193, 0.918); /* black background with 0.5 opacity */
+  align-self:baseline;
+  color: #f1f1f1; /* grey text */
+  width: 100%; /* full width */
+  padding: 20px; /* some padding */
 }
 /* PUBLIC SPEAKING */
 .public-speaking{
@@ -297,11 +314,11 @@ div.timeline__item {
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid grey;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 input[type=submit] {
@@ -310,37 +327,36 @@ input[type=submit] {
   padding: 12px 20px;
   border: none;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+
 }
 
-/* Style the container/contact section */
+
 .containerform {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Create two columns that float next to eachother */
+
 .column {
   float: left;
   width: 50%;
   margin-top: 6px;
   padding: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+ 
 }
 
-/* Clear floats after the columns */
-.row:after {
+
+.rowform:after {
   content: "";
   display: table;
   clear: both;
-  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 
@@ -391,19 +407,19 @@ footer{
 }
 
 @media screen and (max-width: 768px){
-    .container .landing-content h1{
-      font-size: 65px;
-    }
-    .container .landing-content p{
-      font-size: 30px;
-    }
-    
-    .timeline__item{
-        flex-direction: column;
-    }
-    .timeline__item .description{
-        margin-top: 10px;
-    }
+  .container .landing-content h1{
+    font-size: 65px;
+  }
+  .container .landing-content p{
+    font-size: 30px;
+  }
+  
+  .timeline__item{
+    flex-direction: column;
+  }
+  .timeline__item .description{
+    margin-top: 10px;
+  }
 
 }
 
@@ -420,5 +436,27 @@ footer{
     width: 100%;
     margin-top: 0;
     font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+
+/* ANIMATION */
+
+.bird {
+  background-image: url("https://i.imgur.com/eo10972.png");
+  background-size: auto 100%;
+  width: 1000px;
+  height: 1250px;
+  will-change: background-position;
+  animation-name: fly-right-one;
+  animation-timing-function: steps(9);
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+@keyframes fly-right-one {
+  100% {
+    background-position: -900px 0;
   }
 }
