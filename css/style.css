@@ -156,7 +156,7 @@ header nav{
 }
 .about .container .bg {
   clip-path: polygon(29% 0, 100% 0, 86% 99%, 0% 100%);
-  background: url("../images//Trisha.jpeg") no-repeat;
+  background: url("../images/Trisha.jpg") no-repeat;
   background-size: cover;
   min-height: 500px;
   width: 100%;
