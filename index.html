@@ -753,47 +753,48 @@
             </ul>
          </div>
       </div>
-<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-<div class="containerform">
-    <div style="text-align:center">
-        <div class="row center intro">
-            <h2>Contact Me</h2>
-            <p>Swing by for a cup of coffee, or leave me a message:</p>
+  <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+  
+    <div class="containerform">
+        <div style="text-align:center">
+            <div class="row center intro">
+                <h2>Contact Me</h2>
+                <p>Swing by for a cup of coffee, or leave me a message:</p>
+            </div>
         </div>
-    </div>
-    <div class="rowform">
-        <div class="column">
-            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80" style="width: 500%" alt="Coffee">
+        <div class="rowform">
+            <div class="column">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80" style="width: 500%" alt="Coffee">
+            </div>
         </div>
+        <form action="#" method="post" id="your_form_id">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" required placeholder="Your name..">
+            <br>
+            <span id="fnameError" class="error"></span> <!-- Error message placeholder -->
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" required placeholder="Your last name..">
+            <br>
+            <span id="lnameError" class="error"></span> <!-- Error message placeholder -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Your email..">
+            <br>
+            <span id="emailError" class="error"></span> <!-- Error message placeholder -->
+            <br>
+            <label for="Online">Please share online social profile</label>
+            <textarea id="Online" name="Online" required placeholder="Profile such as LinkedIn, GitHub, Facebook, Twitter" style="height:170px"></textarea>
+            <br>
+            <span id="onlineError" class="error"></span> <!-- Error message placeholder -->
+            <br>
+            <label for="subject">Subject and brief reason</label>
+            <textarea id="subject" name="subject" required placeholder="Write something.." style="height:170px"></textarea>
+            <br>
+            <span id="subjectError" class="error"></span> <!-- Error message placeholder -->
+            <!-- reCAPTCHA V3 verification -->
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
     </div>
-    <form action="#" method="post" id="your_form_id">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" required placeholder="Your name..">
-        <br>
-        <span id="fnameError" class="error"></span> <!-- Error message placeholder -->
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" required placeholder="Your last name..">
-        <br>
-        <span id="lnameError" class="error"></span> <!-- Error message placeholder -->
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required placeholder="Your email..">
-        <br>
-        <span id="emailError" class="error"></span> <!-- Error message placeholder -->
-        <br>
-        <label for="Online">Please share online social profile</label>
-        <textarea id="Online" name="Online" required placeholder="Profile such as LinkedIn, GitHub, Facebook, Twitter" style="height:170px"></textarea>
-        <br>
-        <span id="onlineError" class="error"></span> <!-- Error message placeholder -->
-        <br>
-        <label for="subject">Subject and brief reason</label>
-        <textarea id="subject" name="subject" required placeholder="Write something.." style="height:170px"></textarea>
-        <br>
-        <span id="subjectError" class="error"></span> <!-- Error message placeholder -->
-        <!-- reCAPTCHA V3 verification -->
-        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-        <button type="button" onclick="submitForm()">Submit</button>
-    </form>
-</div>
 
 <script>
  function onRecaptchaVerify(response) {
