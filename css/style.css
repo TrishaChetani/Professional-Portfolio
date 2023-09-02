@@ -16,7 +16,6 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
-  text-transform: lowercase;
 }
 img {
   max-width: 100%;
@@ -44,9 +43,24 @@ nav ul a, nav .brand-logo {
   transition: .3s;
 }
 .ul .li {
-  list-style-type: circle;
-   text-transform: lowercase;
-}
+
+ text-transform: lowercase;
+        }
+
+
+        body {
+            font-family: sans-serif;
+        }
+        
+        .sentence-case {
+            text-transform: lowercase  !important;
+        }
+        
+        .sentence-case:first-letter {
+            text-transform: uppercase;
+        }
+
+
 img {
   max-width: 100%;
   height: auto;
@@ -92,9 +106,6 @@ header nav {
 }
 .sidenav-trigger {
   color: orange;
-}
-.sentence-case {
-  text-transform: lowercase  !important;
 }
 /* LANDING PAGE */
 .container {
