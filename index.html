@@ -740,24 +740,39 @@
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80"
                   style="width:500%">
             </div>
-            <div class="column">
-               <form action="agarwalatrisha1212@gmail.com" method="post" enctype="text/plain"></form>
-               <label for="fname">First Name</label>
-               <input type="text" id="fname" name="firstname" required placeholder="Your name..">
-               <label for="lname">Last Name</label>
-               <input type="text" id="lname" name="lastname" required placeholder="Your last name..">
-               <label for="Online">Please share online social profile</label>
-               <textarea id="Online" name="Online" required placeholder="Profile such as linkedin, github, facebook,twitter"
-                  style="height:170px"></textarea>
-               <label for="subject">Subject and brief reason</label>
-               <textarea id="subject" name="subject" required placeholder="Write something.." style="height:170px"></textarea>
-               <div class="g-recaptcha" data-sitekey="my_site_key"></div>
-               <br />
-               <input type="submit" value="Submit">
-               </form>
-            </div>
-         </div>
-      </div>
+      <div class="column">
+  <form action="agarwalatrisha1212@gmail.com" method="post" enctype="text/plain">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" required placeholder="Your name..">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" required placeholder="Your last name..">
+    <label for="Online">Please share online social profile</label>
+    <textarea id="Online" name="Online" required placeholder="Profile such as linkedin, github, facebook, twitter" style="height:170px"></textarea>
+    <label for="subject">Subject and brief reason</label>
+    <textarea id="subject" name="subject" required placeholder="Write something.." style="height:170px"></textarea>
+    <div class="g-recaptcha" data-sitekey="6Le6I_QnAAAAAJvSSWUjjEyy_jg9J5g--WRmGDLJ"></div>
+    <br />
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', (e) => {
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (!recaptchaResponse) {
+      e.preventDefault(); // Prevent form submission
+      alert('Please complete the reCAPTCHA');
+    }
+  });
+</script>
+
       <footer class="footer">
          <div class="social">
             <a target='_blank' href="https://www.linkedin.com/in/TrishaChetani/"><i class="fa fa-linkedin"></i></a>
