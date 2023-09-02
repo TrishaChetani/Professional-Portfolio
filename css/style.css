@@ -188,7 +188,11 @@ header nav{
   margin-top: 10px;
   display: inline-block;
 }
-
+ .error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px; /* Adjust this value to move the error message up or down */
+}
   
 /* Work history */
 div.timeline__item {
