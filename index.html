@@ -790,19 +790,16 @@
             <br>
             <span id="subjectError" class="error"></span> <!-- Error message placeholder -->
             <!-- reCAPTCHA V3 verification -->
-            <div id="recaptcha" class="g-recaptcha"></div>
-            <button type="button" onclick="submitForm()">Submit</button>
+           <div class="g-recaptcha" data-sitekey="6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ" data-callback="onRecaptchaVerify"></div>
+           <button type="button" onclick="submitForm()">Submit</button>
          </form>
       </div>
       <script>
-         function onRecaptchaLoad() {
-          // Render the reCAPTCHA widget in the 'recaptcha' div
-          grecaptcha.render('recaptcha', {
-              sitekey: '6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ',
-              size: 'invisible', // Set the reCAPTCHA size to invisible
-              callback: submitForm // Callback function when reCAPTCHA is verified
-          });
-         }
+     function onRecaptchaVerify(response) {
+            // This function is called when reCAPTCHA is verified
+            const submitBtn = document.getElementById("submitBtn");
+            submitBtn.style.display = "block"; // Show the submit button
+        }
          
          
          function validateForm() {
