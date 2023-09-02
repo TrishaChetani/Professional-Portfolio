@@ -189,6 +189,11 @@ header nav{
   display: inline-block;
 }
 
+.g-recaptcha {
+    display: block;
+    margin: 0 auto; /* Center the reCAPTCHA widget horizontally */
+}
+
   
 /* Work history */
 div.timeline__item {
