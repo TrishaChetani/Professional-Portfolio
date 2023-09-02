@@ -753,8 +753,8 @@
             </ul>
          </div>
       </div>
-  <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-  
+
+
     <div class="containerform">
         <div style="text-align:center">
             <div class="row center intro">
@@ -870,61 +870,52 @@
          
            return valid;
          }
-           function submitForm() {
-        if (!validateForm()) {
-            return; // Don't submit if the form is not valid
-        }
-
-        // Verify reCAPTCHA V3
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (token) {
-                // Include the reCAPTCHA token in the form data
-                document.getElementById('g-recaptcha-response').value = token;
-
-                // Get the score assigned by reCAPTCHA
-                grecaptcha.ready(function () {
-                    grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (score) {
-                        // Check if the score is below your threshold (e.g., 0.5)
-                        if (score < 0.5) {
-                            alert("reCAPTCHA validation failed. Please try again.");
-                        } else {
-                            // Your existing form submission code here
-                            const formData = {
-                                from_name: document.getElementById("fname").value,
-                                from_lastname: document.getElementById("lname").value,
-                                from_email: document.getElementById("email").value,
-                                from_onlineprofile: document.getElementById("Online").value,
-                                from_emailsubject: document.getElementById("subject").value,
-                                to_name: 'Recipient Name',
-                                message: 'This is the message content.',
-                            };
-
-                            // Send data to Email.js for email delivery
-                            emailjs.init("U84GVdYw4DEUTotAU"); // Replace with your Email.js user ID
-
-                            emailjs.send("service_dx9yelf", "template_43up10h", formData)
-                                .then(function (response) {
-                                    if (response.status === 200) {
-                                        alert("Thank you for your submission!");
-                                        // Clear form fields if needed
-                                        document.getElementById("fname").value = "";
-                                        document.getElementById("lname").value = "";
-                                        document.getElementById("email").value = "";
-                                        document.getElementById("Online").value = "";
-                                        document.getElementById("subject").value = "";
-                                    } else {
-                                        alert("Oops! Something went wrong. Please try again.");
-                                    }
-                                }).catch(function (error) {
-                                    console.error("Error:", error);
-                                    alert("Oops! Something went wrong. Please try again later.");
-                                });
-                        }
-                    });
-                });
-            });
-        });
+         function submitForm() {
+    if (!validateForm()) {
+        return; // Don't submit if the form is not valid
     }
+
+    // Request reCAPTCHA V3 validation
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (token) {
+            // Include the reCAPTCHA token in the form data
+            document.getElementById('g-recaptcha-response').value = token;
+
+            // Your existing form submission code here
+            const formData = {
+                from_name: document.getElementById("fname").value,
+                from_lastname: document.getElementById("lname").value,
+                from_email: document.getElementById("email").value,
+                from_onlineprofile: document.getElementById("Online").value,
+                from_emailsubject: document.getElementById("subject").value,
+                to_name: 'Recipient Name',
+                message: 'This is the message content.',
+            };
+
+            // Send data to Email.js for email delivery
+            emailjs.init("U84GVdYw4DEUTotAU"); // Replace with your Email.js user ID
+
+            emailjs.send("service_dx9yelf", "template_43up10h", formData)
+                .then(function (response) {
+                    if (response.status === 200) {
+                        alert("Thank you for your submission!");
+                        // Clear form fields if needed
+                        document.getElementById("fname").value = "";
+                        document.getElementById("lname").value = "";
+                        document.getElementById("email").value = "";
+                        document.getElementById("Online").value = "";
+                        document.getElementById("subject").value = "";
+                    } else {
+                        alert("Oops! Something went wrong. Please try again.");
+                    }
+                }).catch(function (error) {
+                    console.error("Error:", error);
+                    alert("Oops! Something went wrong. Please try again later.");
+                });
+        });
+    });
+}
+
 </script>
       <footer class="footer">
          <div class="social">
