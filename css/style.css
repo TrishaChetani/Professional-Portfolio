@@ -11,7 +11,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,300;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Arima+Madurai:300");
 body {
-  font-family: nunito;
+  font-family: sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
 }
