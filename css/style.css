@@ -91,6 +91,9 @@ header nav {
 .sidenav-trigger {
   color: orange;
 }
+.sentence-case {
+  text-transform: lowercase  !important;
+}
 /* LANDING PAGE */
 .container {
   width: 80%;
