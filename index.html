@@ -31,7 +31,7 @@
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERMGTYQHWF"></script>
      <script src="https://www.google.com/recaptcha/api.js?render=6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ"></script>
       <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
       <style>
          /* Add some margin to the bottom of the "Contact Me" section to create space for the form */
          .intro {
@@ -791,20 +791,36 @@
             <br>
             <span id="subjectError" class="error"></span> <!-- Error message placeholder -->
             <!-- reCAPTCHA V3 verification -->
-            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+               <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
             <button type="button" onclick="submitForm()">Submit</button>
         </form>
     </div>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
+           // Initialize reCAPTCHA
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (token) {
+                // Include the reCAPTCHA token in the form data
+                document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+
+        // Rest of your JavaScript code
+        function onRecaptchaVerify(response) {
+            // This function is called when reCAPTCHA is verified
+            const submitBtn = document.getElementById("submitBtn");
+            submitBtn.style.display = "block"; // Show the submit button
+        }
+
  function onRecaptchaVerify(response) {
         // This function is called when reCAPTCHA is verified
         const submitBtn = document.getElementById("submitBtn");
         submitBtn.style.display = "block"; // Show the submit button
-    }
+ }
 
          
-         function validateForm() {
+ function validateForm() {
            const firstName = document.getElementById("fname").value;
            const lastName = document.getElementById("lname").value;
            const email = document.getElementById("email").value;
@@ -869,8 +885,8 @@
            }
          
            return valid;
-         }
-         function submitForm() {
+   }
+function submitForm() {
     if (!validateForm()) {
         return; // Don't submit if the form is not valid
     }
