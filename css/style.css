@@ -189,10 +189,14 @@ header nav{
   display: inline-block;
 }
 
+/* Center the reCAPTCHA widget horizontally and vertically */
 .g-recaptcha {
-    display: block;
-    margin: 0 auto; /* Center the reCAPTCHA widget horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* You can adjust the height as needed */
 }
+
 
   
 /* Work history */
