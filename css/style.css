@@ -16,6 +16,7 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
+  text-transform: lowercase;
 }
 img {
   max-width: 100%;
@@ -44,6 +45,7 @@ nav ul a, nav .brand-logo {
 }
 .ul .li {
   list-style-type: circle;
+   text-transform: lowercase;
 }
 img {
   max-width: 100%;
