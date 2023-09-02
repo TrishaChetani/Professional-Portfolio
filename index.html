@@ -814,7 +814,7 @@
          
              // Define validation rules (you can customize these)
              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-             const socialProfileRegex = /^(https?:\/\/)?(www\.)?(linkedin\.com|github\.com|facebook\.com|twitter\.com|instagram\.com)\/\w+/i;
+             const socialProfileRegex = /^(https?:\/\/)?(www\.)?(linkedin\.com|github\.com|facebook\.com|twitter\.com|instagram\.com)\/(in\/)?(\w+)\/?$/i;
              const nameRegex = /^[a-zA-Z\s]*$/; // 
          
              let valid = true;
@@ -847,7 +847,8 @@
          onlineError.textContent = "Social address is required";
          valid = false;
          } else if (!socialProfileRegex.test(onlineProfile)) {
-          onlineError.textContent = "Valid Social Media Profile URL is required(Either one of them e.g., linkedin, github,facebook, twitter,instagram";
+         onlineError.textContent = "Please enter a valid social media profile URL. It should include one of the following platforms: LinkedIn, GitHub, Facebook, Twitter, or Instagram, followed by your username.";
+
          valid = false;
          }
          
