@@ -29,9 +29,9 @@
       <meta name="google-site-verification" content="ijCBH1JAzhp52g4o6QflSZyyXo_7HpqNm6-RxQRXM4E" />
       <link rel="stylesheet" type="text/css" href="style.css?&lt;?php echo date('l jS \of F Y h:i:s A'); ?&gt;" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERMGTYQHWF"></script>
-     <script src="https://www.google.com/recaptcha/api.js?render=6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ"></script>
+      <script src="https://www.google.com/recaptcha/api.js?render=6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ"></script>
       <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       <style>
          /* Add some margin to the bottom of the "Contact Me" section to create space for the form */
          .intro {
@@ -753,21 +753,20 @@
             </ul>
          </div>
       </div>
-
-
-    <div class="containerform">
-        <div style="text-align:center">
+      <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+      <div class="containerform">
+         <div style="text-align:center">
             <div class="row center intro">
-                <h2>Contact Me</h2>
-                <p>Swing by for a cup of coffee, or leave me a message:</p>
+               <h2>Contact Me</h2>
+               <p>Swing by for a cup of coffee, or leave me a message:</p>
             </div>
-        </div>
-        <div class="rowform">
+         </div>
+         <div class="rowform">
             <div class="column">
-                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80" style="width: 500%" alt="Coffee">
+               <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2253&q=80" style="width: 500%" alt="Coffee">
             </div>
-        </div>
-        <form action="#" method="post" id="your_form_id">
+         </div>
+         <form action="#" method="post" id="your_form_id">
             <label for="fname">First Name</label>
             <input type="text" id="fname" name="firstname" required placeholder="Your name..">
             <br>
@@ -791,149 +790,142 @@
             <br>
             <span id="subjectError" class="error"></span> <!-- Error message placeholder -->
             <!-- reCAPTCHA V3 verification -->
-            <div class="g-recaptcha" data-sitekey="6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ" data-action="submit"></div>
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
             <button type="button" onclick="submitForm()">Submit</button>
-        </form>
-    </div>
-     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<script>
-           // Initialize reCAPTCHA
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (token) {
-                // Include the reCAPTCHA token in the form data
-                document.getElementById('g-recaptcha-response').value = token;
-            });
-        });
-
-        // Rest of your JavaScript code
-        function onRecaptchaVerify(response) {
-            // This function is called when reCAPTCHA is verified
-            const submitBtn = document.getElementById("submitBtn");
-            submitBtn.style.display = "block"; // Show the submit button
-        }
-
- function onRecaptchaVerify(response) {
-        // This function is called when reCAPTCHA is verified
-        const submitBtn = document.getElementById("submitBtn");
-        submitBtn.style.display = "block"; // Show the submit button
- }
-
+         </form>
+      </div>
+      <script>
+         function onRecaptchaVerify(response) {
+                // This function is called when reCAPTCHA is verified
+                const submitBtn = document.getElementById("submitBtn");
+                submitBtn.style.display = "block"; // Show the submit button
+            }
          
- function validateForm() {
-           const firstName = document.getElementById("fname").value;
-           const lastName = document.getElementById("lname").value;
-           const email = document.getElementById("email").value;
-           const onlineProfile = document.getElementById("Online").value;
-           const subject = document.getElementById("subject").value;
-           const fnameError = document.getElementById("fnameError");
-           const lnameError = document.getElementById("lnameError");
-           const emailError = document.getElementById("emailError");
-           const onlineError = document.getElementById("onlineError");
-           const subjectError = document.getElementById("subjectError");
+                 
+                 function validateForm() {
+                   const firstName = document.getElementById("fname").value;
+                   const lastName = document.getElementById("lname").value;
+                   const email = document.getElementById("email").value;
+                   const onlineProfile = document.getElementById("Online").value;
+                   const subject = document.getElementById("subject").value;
+                   const fnameError = document.getElementById("fnameError");
+                   const lnameError = document.getElementById("lnameError");
+                   const emailError = document.getElementById("emailError");
+                   const onlineError = document.getElementById("onlineError");
+                   const subjectError = document.getElementById("subjectError");
+                 
+                   // Reset error messages
+                   fnameError.textContent = "";
+                   lnameError.textContent = "";
+                   emailError.textContent = "";
+                   onlineError.textContent = "";
+                   subjectError.textContent = "";
+                 
+                   // Define validation rules (you can customize these)
+                   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                   const socialProfileRegex = /^(https?:\/\/)?(www\.)?(linkedin\.com|github\.com|facebook\.com|twitter\.com|instagram\.com)\/(in\/)?(\w+)\/?$/i;
+                   const nameRegex = /^[a-zA-Z\s]*$/; // 
+                 
+                   let valid = true;
+                 
+                 if (firstName.trim() === "") {
+                   fnameError.textContent = "First Name is required";
+                   valid = false;
+                 } else if (!nameRegex.test(firstName)) {
+                   fnameError.textContent = "First Name can only contain letters and spaces";
+                   valid = false;
+                 }
+                 
+                 if (lastName.trim() === "") {
+                   lnameError.textContent = "Last Name is required";
+                   valid = false;
+                 } else if (!nameRegex.test(lastName)) {
+                   lnameError.textContent = "Last Name can only contain letters and spaces";
+                   valid = false;
+                 }
+                 
+                 
+                 if (email.trim() === "") {
+                 emailError.textContent = "Email Address is required";
+                 valid = false;
+                 } else if (!emailRegex.test(email)) {
+                 emailError.textContent = "Valid Email Address is required";
+                 valid = false;
+                 }
+                 if (onlineProfile.trim() === "") {
+                 onlineError.textContent = "Social address is required";
+                 valid = false;
+                 } else if (!socialProfileRegex.test(onlineProfile)) {
+                 onlineError.textContent = "Please enter a valid social media profile URL. It should include one of the following platforms: LinkedIn, GitHub, Facebook, Twitter, or Instagram, followed by your username.";
+                 
+                 valid = false;
+                 }
+                 
+                   if (subject.trim() === "") {
+                       subjectError.textContent = "Subject and Brief Reason is required";
+                       valid = false;
+                   }
+                 
+                   return valid;
+                 }
+                 
+              function submitForm() {
+                if (!validateForm()) {
+                    return; // Don't submit if the form is not valid
+                }
          
-           // Reset error messages
-           fnameError.textContent = "";
-           lnameError.textContent = "";
-           emailError.textContent = "";
-           onlineError.textContent = "";
-           subjectError.textContent = "";
+                // Verify reCAPTCHA V3
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (token) {
+                        // Include the reCAPTCHA token in the form data
+                        document.getElementById('g-recaptcha-response').value = token;
          
-           // Define validation rules (you can customize these)
-           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-           const socialProfileRegex = /^(https?:\/\/)?(www\.)?(linkedin\.com|github\.com|facebook\.com|twitter\.com|instagram\.com)\/(in\/)?(\w+)\/?$/i;
-           const nameRegex = /^[a-zA-Z\s]*$/; // 
+                        // Get the score assigned by reCAPTCHA
+                        grecaptcha.ready(function () {
+                            grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (score) {
+                                // Check if the score is below your threshold (e.g., 0.5)
+                                if (score < 0.5) {
+                                    alert("reCAPTCHA validation failed. Please try again.");
+                                } else {
+                                    // Your existing form submission code here
+                                    const formData = {
+                                        from_name: document.getElementById("fname").value,
+                                        from_lastname: document.getElementById("lname").value,
+                                        from_email: document.getElementById("email").value,
+                                        from_onlineprofile: document.getElementById("Online").value,
+                                        from_emailsubject: document.getElementById("subject").value,
+                                        to_name: 'Recipient Name',
+                                        message: 'This is the message content.',
+                                    };
          
-           let valid = true;
+                                    // Send data to Email.js for email delivery
+                                    emailjs.init("U84GVdYw4DEUTotAU"); // Replace with your Email.js user ID
          
-         if (firstName.trim() === "") {
-           fnameError.textContent = "First Name is required";
-           valid = false;
-         } else if (!nameRegex.test(firstName)) {
-           fnameError.textContent = "First Name can only contain letters and spaces";
-           valid = false;
-         }
-         
-         if (lastName.trim() === "") {
-           lnameError.textContent = "Last Name is required";
-           valid = false;
-         } else if (!nameRegex.test(lastName)) {
-           lnameError.textContent = "Last Name can only contain letters and spaces";
-           valid = false;
-         }
-         
-         
-         if (email.trim() === "") {
-         emailError.textContent = "Email Address is required";
-         valid = false;
-         } else if (!emailRegex.test(email)) {
-         emailError.textContent = "Valid Email Address is required";
-         valid = false;
-         }
-         if (onlineProfile.trim() === "") {
-         onlineError.textContent = "Social address is required";
-         valid = false;
-         } else if (!socialProfileRegex.test(onlineProfile)) {
-         onlineError.textContent = "Please enter a valid social media profile URL. It should include one of the following platforms: LinkedIn, GitHub, Facebook, Twitter, or Instagram, followed by your username.";
-         
-         valid = false;
-         }
-         
-           if (subject.trim() === "") {
-               subjectError.textContent = "Subject and Brief Reason is required";
-               valid = false;
-           }
-         
-           return valid;
-   }
-function submitForm() {
-    if (!validateForm()) {
-        return; // Don't submit if the form is not valid
-    }
-
-    // Request reCAPTCHA V3 validation
-    grecaptcha.ready(function () {
-       alert('reCAPTCHA is ready.');
-        grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (token) {
-            // Include the reCAPTCHA token in the form data
-            document.getElementById('g-recaptcha-response').value = token;
-
-            // Your existing form submission code here
-            const formData = {
-                from_name: document.getElementById("fname").value,
-                from_lastname: document.getElementById("lname").value,
-                from_email: document.getElementById("email").value,
-                from_onlineprofile: document.getElementById("Online").value,
-                from_emailsubject: document.getElementById("subject").value,
-                to_name: 'Recipient Name',
-                message: 'This is the message content.',
-            };
-
-            // Send data to Email.js for email delivery
-            emailjs.init("U84GVdYw4DEUTotAU"); // Replace with your Email.js user ID
-
-            emailjs.send("service_dx9yelf", "template_43up10h", formData)
-                .then(function (response) {
-                    if (response.status === 200) {
-                        alert("Thank you for your submission!");
-                        // Clear form fields if needed
-                        document.getElementById("fname").value = "";
-                        document.getElementById("lname").value = "";
-                        document.getElementById("email").value = "";
-                        document.getElementById("Online").value = "";
-                        document.getElementById("subject").value = "";
-                    } else {
-                        alert("Oops! Something went wrong. Please try again.");
-                    }
-                }).catch(function (error) {
-                    console.error("Error:", error);
-                    alert("Oops! Something went wrong. Please try again later.");
+                                    emailjs.send("service_dx9yelf", "template_43up10h", formData)
+                                        .then(function (response) {
+                                            if (response.status === 200) {
+                                                alert("Thank you for your submission!");
+                                                // Clear form fields if needed
+                                                document.getElementById("fname").value = "";
+                                                document.getElementById("lname").value = "";
+                                                document.getElementById("email").value = "";
+                                                document.getElementById("Online").value = "";
+                                                document.getElementById("subject").value = "";
+                                            } else {
+                                                alert("Oops! Something went wrong. Please try again.");
+                                            }
+                                        }).catch(function (error) {
+                                            console.error("Error:", error);
+                                            alert("Oops! Something went wrong. Please try again later.");
+                                        });
+                                }
+                            });
+                        });
+                    });
                 });
-        });
-    });
-}
-
-</script>
+            }
+              
+      </script>
       <footer class="footer">
          <div class="social">
             <a target='_blank' href="https://www.linkedin.com/in/TrishaChetani/"><i class="fa fa-linkedin"></i></a>
