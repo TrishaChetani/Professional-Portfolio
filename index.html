@@ -788,15 +788,11 @@
             <!-- reCAPTCHA V3 verification -->
             <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
             <button type="button" onclick="submitForm()">Submit</button>
-            <div id="debug"></div>
+          
          </form>
       </div>
       <script>
-         function displayDebugMessage(message) {
-             const debugArea = document.getElementById("debug");
-             debugArea.innerHTML += message + "<br>";
-         }
-         
+    
          function validateForm() {
              const firstName = document.getElementById("fname").value;
              const lastName = document.getElementById("lname").value;
@@ -897,7 +893,7 @@
                             message: 'This is the message content.',
                         };
          
-                        displayDebugMessage("Form Data: " + JSON.stringify(formData));
+                       
          
                         // Send data to Email.js for email delivery
                         emailjs.init("U84GVdYw4DEUTotAU"); // Replace with your Email.js user ID
