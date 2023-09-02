@@ -4,28 +4,30 @@
  * Use this file to override Materialize files so you can update
  * the core Materialize files in the future
  *
- * Made By MaterializeCSS.com
+ * Made by MaterializeCSS.com
  */
 
 /* Global styles */
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,300;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Arima+Madurai:300");
+
+/* Global styles */
 body {
   font-family: sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
 }
-img{
+img {
   max-width: 100%;
 }
 
 nav ul a, nav .brand-logo {
   color: #444;
 }
-.m-30{
+.m-30 {
   margin: 30px 0px !important;
 }
-.link_btn{
+.link_btn {
   font-size: 16px;
   border: 1px solid orangered;
   padding: 5px 20px;
@@ -35,7 +37,7 @@ nav ul a, nav .brand-logo {
   display: inline-block;
   transition: .3s;
 }
-.link_btn:hover{
+.link_btn:hover {
   background: orangered;
   color: #fff;
   transition: .3s;
@@ -69,21 +71,20 @@ h1 {
 p {
   line-height: 2rem;
 }
-.bg-grey{
+.bg-grey {
   background: #fbfbfb;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-header{
+header {
   position: absolute;
   top: 0;
   left: 0;
   background: transparent;
   width: 100%;
-  z-index: 9999
-
+  z-index: 9999;
 }
-header nav{
+header nav {
   background: transparent;
   z-index: 999;
 }
@@ -165,7 +166,7 @@ header nav{
   color: rgb(207, 140, 15);
 }
 /* Section intro */
-.intro{
+.intro {
   margin-bottom: 20px;
 }
 .intro > h2 {
@@ -430,7 +431,7 @@ ul.custom li:before {
 
 /* Contact form */
 
-input[type="text"],select,textarea {
+input[type="text"], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid grey;
@@ -488,9 +489,9 @@ footer .social a {
 
 
 /* RESPONSIVENESS */
-@media screen and (min-width: 768px){
-  header *{
-    color:#fff !important;
+@media screen and (min-width: 768px) {
+  header * {
+    color: #fff !important;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -522,16 +523,16 @@ footer .social a {
   #index-banner .section {
     top: 10%;
   }
-  .public-speaking .event{
+  .public-speaking .event {
     flex: 50%
   }
-  .container .lists.cols.more{
+  .container .lists.cols.more {
     columns: 2;
   }
 }
 
 @media screen and (max-width: 768px) {
-  #logo-container{
+  #logo-container {
     display: none
   }
   .container {
@@ -553,20 +554,20 @@ footer .social a {
 }
 
 @media screen and (max-width: 600px) {
-  .container{
+  .container {
     width: 95%;
     max-width: 98%;
   }
   #index-banner .section {
     top: 0;
   }
-  .public-speaking .event{
+  .public-speaking .event {
     flex: 100%
   }
-  container .lists.cols{
+  container .lists.cols {
     columns: 1;
   } 
-  .container .lists.cols.more{
+  .container .lists.cols.more {
     columns: 1;
   }
 }
@@ -580,11 +581,11 @@ footer .social a {
     font-family: Arial, Helvetica, sans-serif;
   }
 }
- .error {
-        color: red;
-        font-size: 14px;
-        margin-top: -10px; /* Adjust this value to move the error message up or down */
-    }
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px; /* Adjust this value to move the error message up or down */
+}
 /* ANIMATION */
 
 .bird {
