@@ -234,6 +234,7 @@ div.timeline__item {
   color: #555;
   max-width: 800px;
   margin-left: 40px;
+  font-family: sans-serif;
 }
 .timeline__title {
   color: #222;
