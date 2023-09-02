@@ -794,7 +794,7 @@
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
 </div>
-<script>
+
 <script>
  function onRecaptchaVerify(response) {
         // This function is called when reCAPTCHA is verified
@@ -869,8 +869,7 @@
          
            return valid;
          }
-         
- function submitForm() {
+           function submitForm() {
         if (!validateForm()) {
             return; // Don't submit if the form is not valid
         }
@@ -925,7 +924,7 @@
             });
         });
     }
-      </script>
+</script>
       <footer class="footer">
          <div class="social">
             <a target='_blank' href="https://www.linkedin.com/in/TrishaChetani/"><i class="fa fa-linkedin"></i></a>
