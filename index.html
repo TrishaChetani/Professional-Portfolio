@@ -877,6 +877,7 @@
 
     // Request reCAPTCHA V3 validation
     grecaptcha.ready(function () {
+       alert('reCAPTCHA is ready.');
         grecaptcha.execute('6LcgNvQnAAAAAAovApg6QXDbWpYcyvCGx2JkbVsZ', { action: 'submit' }).then(function (token) {
             // Include the reCAPTCHA token in the form data
             document.getElementById('g-recaptcha-response').value = token;
